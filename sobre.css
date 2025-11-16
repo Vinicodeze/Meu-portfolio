@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ======= Cores principais ======= */
+    --cor-primaria: #3A86FF;       /* Destaques, botões, títulos */
+    --cor-secundaria: #265DCC;     /* Hover, detalhes */
+
+    /* ======= Fundo ======= */
+    --cor-fundo: #0D1117;          /* Fundo geral da página */
+    --cor-header: #0A0F1F;         /* Fundo do Header */
+
+    /* ======= Textos ======= */
+    --cor-texto: #E6E6E6;          /* Parágrafos */
+    --cor-texto-claro: #FFFFFF;    /* Títulos, links */
+
+    /* ======= Cards, caixas, fieldset ======= */
+    --cor-caixa: #161B22;          /* Fundo dos cards/form */
+    --cor-borda: #30363D;          /* Bordas */
+
+    /* ======= Inputs ======= */
+    --cor-input-bg: #0D1117;       /* Fundo dos inputs */
+    --cor-input-borda: #3A86FF;    /* Borda dos inputs */
+    --cor-input-texto: #FFFFFF;    /* Texto dos inputs */
+
+    /* ======= Links ======= */
+    --cor-link: #3A86FF;           
+    --cor-link-hover: #FFFFFF;
+
+    /* ======= Botões ======= */
+    --cor-botao-bg: #3A86FF;
+    --cor-botao-hover: #265DCC;
+    --cor-botao-texto: #FFFFFF;
+
+    /* ======= Novas cores pedidas ======= */
+    --cor-body-bg: #0D1117;        /* Fundo do body */
+    --cor-main-bg: transparent;    /* Fundo do main */
+    --cor-h2: #FFFFFF;             /* Cor dos h2 */
+    --cor-h3: #3A86FF;             /* Cor dos h3 */
+}
+
+html,body{
+    height: 100%;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: var(--cor-header);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-body-bg);
+    color: var(--cor-texto);
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+header h1{
+    font-size: 2rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 15px;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.3s ;
+    display: inline-block;
+}
+
+.menu li a:hover{
+    background-color: var(--cor-primaria);
+    transform: scale(1.2);
+}
+
+.informacoes{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-caixa);
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    border: 1px solid var(--cor-borda);
+}
+
+.basico{
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--cor-borda);
+}
+
+.basico h2{
+    margin-bottom: 1rem;
+    color: var(--cor-h2);
+}
+
+.objetivos{
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--cor-borda);
+}
+
+.objetivos h2{
+    margin-bottom: 1rem;
+    color: var(--cor-h2);
+}
+
+.motivo{
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--cor-borda);
+}
+
+.motivo h2{
+    margin-bottom: 1rem;
+    color: var(--cor-h2);
+}
+
+.experiencia{
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--cor-borda);
+}
+
+.experiencia h2{
+    margin-bottom: 1rem;
+    color: var(--cor-h2);
+}
+
+.experiencia ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.experiencia li{
+    background-color: var(--cor-primaria);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 600;
+    color: var(--cor-botao-texto);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.experiencia li:hover{
+    transform: scale(1.08);
+    background-color: var(--cor-secundaria);
+}
+
+.habilidades{
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--cor-borda);
+}
+
+.habilidades h2{
+    margin-bottom: 1rem;
+    color: var(--cor-h2);
+}

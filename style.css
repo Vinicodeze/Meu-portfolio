@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ======= Cores principais ======= */
+    --cor-primaria: #3A86FF;       /* Destaques, botões, títulos */
+    --cor-secundaria: #265DCC;     /* Hover, detalhes */
+
+    /* ======= Fundo ======= */
+    --cor-fundo: #0D1117;          /* Fundo geral da página */
+    --cor-header: #0A0F1F;         /* Fundo do Header */
+
+    /* ======= Textos ======= */
+    --cor-texto: #E6E6E6;          /* Parágrafos */
+    --cor-texto-claro: #FFFFFF;    /* Títulos, links */
+
+    /* ======= Cards, caixas, fieldset ======= */
+    --cor-caixa: #161B22;          /* Fundo dos cards/form */
+    --cor-borda: #30363D;          /* Bordas */
+
+    /* ======= Inputs ======= */
+    --cor-input-bg: #0D1117;       /* Fundo dos inputs */
+    --cor-input-borda: #3A86FF;    /* Borda dos inputs */
+    --cor-input-texto: #FFFFFF;    /* Texto dos inputs */
+
+    /* ======= Links ======= */
+    --cor-link: #3A86FF;           
+    --cor-link-hover: #FFFFFF;
+
+    /* ======= Botões ======= */
+    --cor-botao-bg: #3A86FF;
+    --cor-botao-hover: #265DCC;
+    --cor-botao-texto: #FFFFFF;
+
+    /* ======= Novas cores pedidas ======= */
+    --cor-body-bg: #0D1117;        /* Fundo do body */
+    --cor-main-bg: transparent;    /* Fundo do main */
+    --cor-h2: #FFFFFF;             /* Cor dos h2 */
+    --cor-h3: #3A86FF;             /* Cor dos h3 */
+}
+
+html,body{
+    height: 100%;
+}
+
+
+header{
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: var(--cor-header);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-body-bg);
+    color: var(--cor-texto);
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+header h1{
+    font-size: 2rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 15px;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.3s ;
+    display: inline-block;
+}
+
+.menu li a:hover{
+    background-color: var(--cor-primaria);
+    transform: scale(1.2);
+}
+
+.principal{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.foto img{
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border: 3px solid var(--cor-primaria);
+    margin-right: 20px;
+
+}
+
+.texto{
+    flex: 1;
+}
+
+.texto h2{
+    font-size: 2rem;
+    color: var(--cor-h2);
+    margin-bottom: 1rem;
+}
+
+.texto p{
+    line-height: 1.5;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.habili{
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--cor-caixa);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.habili h2{
+    color: var(--cor-h2);
+    margin-bottom: 1rem;
+}
+
+.habili ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.habili li{
+    background-color: var(--cor-primaria);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--cor-botao-texto);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.habili li:hover{
+    transform: scale(1.08);
+    background-color: var(--cor-secundaria);
+}
