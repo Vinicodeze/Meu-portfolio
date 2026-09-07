@@ -5,101 +5,112 @@
 }
 
 :root {
-    /* ======= Cores principais ======= */
-    --cor-primaria: #3A86FF;       /* Destaques, botões, títulos */
-    --cor-secundaria: #265DCC;     /* Hover, detalhes */
+    
+    --cor-primaria: #3A86FF;       
+    --cor-secundaria: #265DCC;     
 
-    /* ======= Fundo ======= */
-    --cor-fundo: #0D1117;          /* Fundo geral da página */
-    --cor-header: #0A0F1F;         /* Fundo do Header */
+    --cor-fundo: #0D1117;          
+    --cor-header: #0A0F1F;         
 
-    /* ======= Textos ======= */
-    --cor-texto: #E6E6E6;          /* Parágrafos */
-    --cor-texto-claro: #FFFFFF;    /* Títulos, links */
 
-    /* ======= Cards, caixas, fieldset ======= */
-    --cor-caixa: #161B22;          /* Fundo dos cards/form */
-    --cor-borda: #30363D;          /* Bordas */
+    --cor-texto: #E6E6E6;          
+    --cor-texto-claro: #FFFFFF;    
 
-    /* ======= Inputs ======= */
-    --cor-input-bg: #0D1117;       /* Fundo dos inputs */
-    --cor-input-borda: #3A86FF;    /* Borda dos inputs */
-    --cor-input-texto: #FFFFFF;    /* Texto dos inputs */
 
-    /* ======= Links ======= */
+    --cor-caixa: #161B22;          
+    --cor-borda: #30363D;          
+
+  
+    --cor-input-bg: #0D1117;       
+    --cor-input-borda: #3A86FF;   
+    --cor-input-texto: #FFFFFF;   
+
+    
     --cor-link: #3A86FF;           
     --cor-link-hover: #FFFFFF;
 
-    /* ======= Botões ======= */
+    
     --cor-botao-bg: #3A86FF;
     --cor-botao-hover: #265DCC;
     --cor-botao-texto: #FFFFFF;
 
-    /* ======= Novas cores pedidas ======= */
-    --cor-body-bg: #0D1117;        /* Fundo do body */
-    --cor-main-bg: transparent;    /* Fundo do main */
-    --cor-h2: #FFFFFF;             /* Cor dos h2 */
-    --cor-h3: #3A86FF;             /* Cor dos h3 */
+   
+    --cor-body-bg: #0D1117;        
+    --cor-main-bg: transparent;   
+    --cor-h2: #FFFFFF;            
+    --cor-h3: #3A86FF;            
 }
 
-html,body{
-    height: 100%;
+html {
+    height: -webkit-fill-available;
 }
 
-header{
-    text-align: center;
-    margin-bottom: 1rem;
-    background-color: var(--cor-header);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    padding: 20px 0;
-}
-
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--cor-body-bg);
     color: var(--cor-texto);
     font-size: 16px;
     line-height: 1.5;
     min-height: 100vh;
+    min-height: 100svh;
+    min-height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
-main{
-    flex: 1;
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: var(--cor-header);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 20px 1rem;
 }
 
-header h1{
+header h1 {
     font-size: 2rem;
     color: var(--cor-texto-claro);
     margin-bottom: 15px;
 }
 
-.menu ul{
+main {
+    flex: 1;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.menu ul {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
     margin: 0;
     padding: 0;
 }
 
-.menu li a{
+.menu li a {
     text-decoration: none;
     color: var(--cor-texto-claro);
     padding: 8px 12px;
     border-radius: 6px;
-    transition: transform 0.2s ease, background-color 0.3s ;
+    transition: transform 0.2s ease, background-color 0.3s;
     display: inline-block;
 }
 
-.menu li a:hover{
+.menu li a:hover {
     background-color: var(--cor-primaria);
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
-.informacoes{
+.informacoes {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -107,86 +118,98 @@ header h1{
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
     max-width: 900px;
+    width: 100%;
     border: 1px solid var(--cor-borda);
+    overflow: hidden;
 }
 
-.basico{
-    padding: 1rem;
+.basico,
+.objetivos,
+.motivo,
+.experiencia,
+.habilidades {
+    padding: 1.5rem;
     text-align: left;
-    border: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
 }
 
-.basico h2{
+.informacoes > div:last-child {
+    border-bottom: none;
+}
+
+.basico h2,
+.objetivos h2,
+.motivo h2,
+.experiencia h2,
+.habilidades h2 {
     margin-bottom: 1rem;
     color: var(--cor-h2);
+    font-size: 1.5rem;
 }
 
-.objetivos{
-    padding: 1rem;
-    text-align: left;
-    border: 1px solid var(--cor-borda);
-}
-
-.objetivos h2{
-    margin-bottom: 1rem;
-    color: var(--cor-h2);
-}
-
-.motivo{
-    padding: 1rem;
-    text-align: left;
-    border: 1px solid var(--cor-borda);
-}
-
-.motivo h2{
-    margin-bottom: 1rem;
-    color: var(--cor-h2);
-}
-
-.experiencia{
-    padding: 1rem;
-    text-align: left;
-    border: 1px solid var(--cor-borda);
-}
-
-.experiencia h2{
-    margin-bottom: 1rem;
-    color: var(--cor-h2);
-}
-
-.experiencia ul{
+.experiencia ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
     margin: 0;
     padding: 0;
 }
 
-.experiencia li{
+.experiencia li {
     background-color: var(--cor-primaria);
     border-radius: 8px;
-    padding: 10px 18px;
+    padding: 8px 16px;
     font-weight: 600;
     color: var(--cor-botao-texto);
-    transition: 0.3s;
+    transition: transform 0.2s ease, background-color 0.3s ease;
     cursor: pointer;
 }
 
-.experiencia li:hover{
-    transform: scale(1.08);
+.experiencia li:hover {
+    transform: scale(1.05);
     background-color: var(--cor-secundaria);
 }
 
-.habilidades{
-    padding: 1rem;
-    text-align: left;
-    border: 1px solid var(--cor-borda);
-}
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px;
+    }
 
-.habilidades h2{
-    margin-bottom: 1rem;
-    color: var(--cor-h2);
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu ul {
+        gap: 5px;
+    }
+
+    .menu li a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .basico,
+    .objetivos,
+    .motivo,
+    .experiencia,
+    .habilidades {
+        padding: 1rem;
+    }
+
+    .basico h2,
+    .objetivos h2,
+    .motivo h2,
+    .experiencia h2,
+    .habilidades h2 {
+        font-size: 1.25rem;
+    }
+
+    .experiencia li {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
 }

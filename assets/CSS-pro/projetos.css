@@ -1,155 +1,205 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 :root {
-    /* ======= Cores principais ======= */
-    --cor-primaria: #3A86FF;       /* Destaques, botões, títulos */
-    --cor-secundaria: #265DCC;     /* Hover, detalhes */
+    --cor-primaria: #3A86FF;
+    --cor-secundaria: #265DCC;
 
-    /* ======= Fundo ======= */
-    --cor-fundo: #0D1117;          /* Fundo geral da página */
-    --cor-header: #0A0F1F;         /* Fundo do Header */
+    --cor-fundo: #0D1117;
+    --cor-header: #0A0F1F;
 
-    /* ======= Textos ======= */
-    --cor-texto: #E6E6E6;          /* Parágrafos */
-    --cor-texto-claro: #FFFFFF;    /* Títulos, links */
+    --cor-texto: #E6E6E6;
+    --cor-texto-claro: #FFFFFF;
 
-    /* ======= Cards, caixas, fieldset ======= */
-    --cor-caixa: #161B22;          /* Fundo dos cards/form */
-    --cor-borda: #30363D;          /* Bordas */
+    --cor-caixa: #161B22;
+    --cor-borda: #30363D;
 
-    /* ======= Inputs ======= */
-    --cor-input-bg: #0D1117;       /* Fundo dos inputs */
-    --cor-input-borda: #3A86FF;    /* Borda dos inputs */
-    --cor-input-texto: #FFFFFF;    /* Texto dos inputs */
+    --cor-input-bg: #0D1117;
+    --cor-input-borda: #3A86FF;
+    --cor-input-texto: #FFFFFF;
 
-    /* ======= Links ======= */
-    --cor-link: #3A86FF;           
+    --cor-link: #3A86FF;
     --cor-link-hover: #FFFFFF;
 
-    /* ======= Botões ======= */
     --cor-botao-bg: #3A86FF;
     --cor-botao-hover: #265DCC;
     --cor-botao-texto: #FFFFFF;
 
-    /* ======= Novas cores pedidas ======= */
-    --cor-body-bg: #0D1117;        /* Fundo do body */
-    --cor-main-bg: transparent;    /* Fundo do main */
-    --cor-h2: #FFFFFF;             /* Cor dos h2 */
-    --cor-h3: #3A86FF;             /* Cor dos h3 */
+    --cor-body-bg: #0D1117;
+    --cor-main-bg: transparent;
+    --cor-h2: #FFFFFF;
+    --cor-h3: #3A86FF;
 }
 
-html,body{
-    height: 100%;
+html {
+    height: -webkit-fill-available;
 }
 
-header{
-    text-align: center;
-    margin-bottom: 1rem;
-    background-color: var(--cor-header);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    padding: 20px 0;
-}
-
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--cor-body-bg);
     color: var(--cor-texto);
     font-size: 16px;
     line-height: 1.5;
     min-height: 100vh;
+    min-height: 100svh;
+    min-height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
-main{
-    flex: 1;
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: var(--cor-header);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 20px 1rem;
 }
 
-header h1{
+header h1 {
     font-size: 2rem;
     color: var(--cor-texto-claro);
     margin-bottom: 15px;
 }
 
-.menu ul{
+main {
+    flex: 1;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.menu ul {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
     margin: 0;
     padding: 0;
 }
 
-.menu li a{
+.menu li a {
     text-decoration: none;
     color: var(--cor-texto-claro);
     padding: 8px 12px;
     border-radius: 6px;
-    transition: transform 0.2s ease, background-color 0.3s ;
+    transition: transform 0.2s ease, background-color 0.3s;
     display: inline-block;
 }
 
-.menu li a:hover{
+.menu li a:hover {
     background-color: var(--cor-primaria);
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
-.projetos-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.projetos-container {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 0;
 }
 
-.projeto{
+.projetos-container h2 {
+    color: var(--cor-h2);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.projeto {
     width: 100%;
+    background-color: var(--cor-caixa);
     border-radius: 7px;
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
     border: 1px solid var(--cor-borda);
 }
 
-.projeto h3{
-    margin-bottom: 1rem;
+.projeto h3 {
+    margin-bottom: 0.5rem;
     color: var(--cor-h3);
 }
 
-.projeto img{
-    width: 300px;
+.projeto img {
+    width: 100%;
+    max-width: 300px;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
     border: 2px solid var(--cor-borda);
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
-    display: inline-block;
+    display: block;
     cursor: pointer;
-
 }
 
-.projeto img:hover{
-    transform: scale(1.8);
+.projeto img:hover {
+    transform: scale(1.05);
 }
 
-.projeto a{
+.projeto a {
     text-decoration: none;
-    margin: 0;
-    padding: 0;
+    margin-top: auto;
     background-color: var(--cor-botao-bg);
     border-radius: 6px;
-    color: var(--cor-texto);
-    padding: 8px 12px;
-    transition: transform 0.2s ease, background-color 0.3s ;
+    color: var(--cor-botao-texto);
+    padding: 8px 16px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
     display: inline-block;
 }
 
-.projeto a:hover{
+.projeto a:hover {
     background-color: var(--cor-botao-hover);
-    transform: scale(1.2);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu ul {
+        gap: 5px;
+    }
+
+    .menu li a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .projetos-container {
+        gap: 1.5rem;
+    }
+
+    .projeto {
+        padding: 1.5rem 1rem;
+    }
+
+    .projeto img:hover {
+        transform: scale(1.02);
+    }
+
+    .projeto a:hover {
+        transform: scale(1.02);
+    }
 }
