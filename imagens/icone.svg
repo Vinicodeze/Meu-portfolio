@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fundo escuro arredondado -->
+  <rect width="100" height="100" rx="20" fill="#0f172a" />
+  <!-- Texto </> centralizado -->
+  <text x="50%" y="52%" dominant-baseline="central" text-anchor="middle" fill="#38bdf8" font-family="monospace, sans-serif" font-weight="bold" font-size="45">&lt;/&gt;</text>
+</svg>
